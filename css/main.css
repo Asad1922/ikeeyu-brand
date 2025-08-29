@@ -1,0 +1,65 @@
+/* --- Global Variables & Reset --- */
+
+:root {
+    --primary-color: #F05A28; /* The main brand color - a bold orange/red */
+    --secondary-color: #FF8000; /* A vibrant accent color - the brighter orange from the logo */
+    --accent-color: #FF8000; /* Used for highlights and active states, can be same as secondary */
+    
+    --white: #ffffff;
+    --black: #000000;
+    --text-color: #2C2C2C;
+    --text-light: #666666;
+    --light-bg: #f8f9fa;
+    --border-color: #dee2e6;
+
+    /* Typography */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+
+    /* Layout */
+    --max-width: 1200px;
+    --container-padding: 1rem;
+}
+
+/* --- Basic CSS Reset --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Container for page content */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+.header-brand .logo img {
+    height: 65px;
+    margin-bottom: -10px;
+}
+/* Add this to your header.css */
+
