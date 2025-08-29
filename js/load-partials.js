@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const partials = [
-        { id: 'header-placeholder', path: '/partials/header.html' },
-        { id: 'footer-placeholder', path: '/partials/footer.html' }
+        { id: 'header-placeholder', path: 'partials/header.html' },
+        { id: 'footer-placeholder', path: 'partials/footer.html' }
     ];
 
     const loadPartial = (id, path) => {
