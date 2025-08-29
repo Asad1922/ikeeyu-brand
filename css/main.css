@@ -13,8 +13,8 @@
     --border-color: #dee2e6;
 
     /* Typography */
-    --font-heading: 'Poppins', sans-serif;
-    --font-body: 'Roboto', sans-serif;
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
 
     /* Layout */
     --max-width: 1200px;
@@ -59,7 +59,157 @@ img {
 }
 .header-brand .logo img {
     height: 65px;
-    margin-bottom: -10px;
+     display: inline-block;
 }
-/* Add this to your header.css */
 
+
+
+
+
+
+
+/* Add this to your header.css */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    background: 
+        url('/images/hero/hero-bg.png') center/cover no-repeat, /* Your wavy or abstract image */
+        #000; /* fallback color */
+    color: #fff;
+    padding: 3rem 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.hero-container {
+    width: 1300px;
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 540px;
+    z-index: 2;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #FF8000;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.hero-form input[type="email"] {
+    padding: 0.8rem 1rem;
+    border-radius: 4px;
+    border: none;
+    font-size: 1rem;
+    width: 220px;
+}
+
+.hero-form button {
+    padding: 0.8rem 1.4rem;
+    background: var(--primary-color, #F05A28);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.hero-form button:hover {
+    background: var(--secondary-color, #FF8000);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 2;
+}
+
+.hero-image img {
+    max-width: 340px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 8px 32px rgba(0,0,0,0.18));
+    animation: floatImg 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatImg {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-18px); }
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+    .hero-container {
+        width: 100%;
+        max-width: 100vw;
+        padding: 0 1rem;
+    }
+}
+@media (max-width: 900px) {
+    .hero-section {
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0 1rem;
+    }
+    .hero-content {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .hero-image {
+        justify-content: center;
+    }
+    .hero-image img {
+        max-width: 220px;
+    }
+}
+
+.hero-image svg {
+    max-width: 340px;
+    width: 100%;
+    height: auto;
+    display: block;
+}

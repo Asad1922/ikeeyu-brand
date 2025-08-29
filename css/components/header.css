@@ -26,15 +26,45 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1400px;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 0.75rem 2rem;
+    padding: 1rem;
     /* The mega menu is now positioned relative to the .site-header,
        so this container no longer needs position: relative */
 }
 
 
+.header-divider {
+    display: inline-block;
+    width: 0.5px;
+    height: 25px;
+    background: #000000;
+    opacity: 0.4;
+margin-right: 0.7rem;
+}
 
+.header-slogan {
+    font-size: 13px;
+    color: #000000;
+    opacity: 0.8;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    line-height: 1.3;
+    text-align: left;
+    display: inline-block;
+    white-space: normal;
+}
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+.logo img,
+.header-divider,
+.header-slogan {
+    display: inline-block;
+    vertical-align: middle;
+}
 /* --------------------
     Main Navigation
 -------------------- */
@@ -46,7 +76,7 @@
 
 .nav-list {
     display: flex;
-    gap: 1.7rem;
+    gap: 1.95rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -62,6 +92,7 @@
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease-in-out;
+    font-size: 16px;
     padding: 2.7rem 0rem;
 }
 
@@ -113,8 +144,10 @@
     justify-content: flex-start;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
     gap: 1.5rem;
+    align-items: stretch; /* Ensure all columns have equal height */
+
 }
 
 .mega-menu-col {
@@ -127,7 +160,7 @@
 }
 
 .mega-menu-col h4 {
-    font-size: 16px;
+    font-size: 16.5px;
     font-weight: 600;
     letter-spacing: 0.3px;
     color: #000; /* Dark black */
@@ -142,16 +175,69 @@
 
 .mega-menu-col li a {
     font-weight: 400;
-    font-size: 14.5px;
-    letter-spacing: 0.35px;
-    padding: 0.3rem 0;
+    font-size: 15px;
+    letter-spacing: 0.25px;
+    padding: 0.4rem 0;
     display: block;
-    color: #383838;
+    color: #2e2e2e;
 }
 
 .mega-menu-col li a:hover {
     color: #333;
 }
+
+.mega-menu-col li a:focus {
+    color: #F05A28;
+    outline: none;
+}
+
+
+
+
+.mega-menu-col li a {
+    position: relative;
+    color: #2e2e2e;
+    transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1), padding-left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    padding-left: 0;
+    display: inline-block;
+}
+
+.mega-menu-col li a::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(-18px);
+    opacity: 0;
+    font-size: 1em;
+    color: #F05A28;
+    transition:
+        opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.mega-menu-col li a:hover,
+.mega-menu-col li a:focus {
+    color: #F05A28;
+    font-weight: 500;
+    padding-left: 18px; /* Text moves right with same speed as arrow */
+}
+
+.mega-menu-col li a:hover::before,
+.mega-menu-col li a:focus::before {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+    color: #F05A28;
+    
+}
+
+
+
+
+
+
 
 /* Call-to-action (CTA) box */
 .mega-menu-cta {
@@ -337,7 +423,7 @@
 
 
         /* --- Media Queries for Mobile --- */
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
             .site-header {
                 padding: 0.5rem 0;
             }
@@ -361,14 +447,60 @@
 a.btn-link {
     background: #f05a28;
     color: white;
-    padding: 9px 25px;
+    padding: 11px 25px;
     border: 2px solid #f05a28;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 a.btn-link:hover {
     background:white;
     color: #f05a28;
-    padding: 9px 25px;
-    border-radius: 10px;
+    padding: 11px 25px;
+    border-radius: 8px;
     border: 2px solid #f05a28;
+}
+/* Promo Banner Styles */
+.promo-banner {
+    background: url('/images/promo-banner.jpg') center/cover no-repeat;
+    position: relative;
+    min-height: 220px;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(240, 90, 40, 0.08);
+    overflow: hidden;
+}
+
+.promo-content {
+    background: rgba(255,255,255,0.85);
+    padding: 1.2rem;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    text-align: left;
+}
+
+.promo-content h4 {
+    color: #F05A28;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.promo-content p {
+    color: #333;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+.mega-menu-col,
+.promo-banner {
+
+    background-color: white;
+}
+
+@media (min-width: 1024px) and (max-width: 1260px) {
+    .header-divider,
+    .header-slogan {
+        display: none !important;
+    }
+    .nav-item a {
+    font-size: 14px;
+}
 }
